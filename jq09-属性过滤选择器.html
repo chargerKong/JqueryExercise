@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#btn1').click(function(){
+				$("p[id1]").css("background","red")
+			})
+
+			$('#btn2').click(function(){
+				$("[id1=lkb]").css("background","red")
+			})
+
+			$('#btn3').click(function(){
+				$("div[id1!=lkb][id1]").css("background","red")
+			})
+
+			$('#btn4').click(function(){
+				$("[id1^=l]").css("background","red")
+			})
+
+			$('#btn5').click(function(){
+				$("[id1$=k]").css("background","red")
+			})
+
+			$('#btn6').click(function(){
+				$("[id1*=kk]").css("background","red")
+			})
+
+			$('#btn7').click(function(){
+				$("div>span[class][id1^=l][id1*=kk]").css("background","red")
+			})
+
+		})
+	</script>
+</head>
+<body>
+	<button id="btn1">选取p标签下属性有id1的div元素</button>
+	<button id="btn2">选择id1属性等于lkb的元素</button>
+	<button id="btn3">选择id1属性不等于lkb的元素</button>
+	<button id="btn4">选择id1属性以l开头的元素</button>
+	<button id="btn5">选择id1属性以k结尾的元素</button>
+	<button id="btn6">选择id1属性包含kk元素</button>
+	<button id="btn7">选择为div后代的span,其中要包含class属性，且id1属性值以l开头，包含kk的span</button>
+	<hr/>
+
+	<div>
+		<p id1 ="id1">
+			www.baidu.com
+		</p>
+	</div>
+	<div style="height: 100px;height: 100px;"></div>
+	<div>
+		<span id1="lkb"  class="nn">
+			www.baidu.com
+		</span>
+		<br/>
+		<span id1="lkkk"  class="nn">
+			www.baidu.com
+		</span>
+	</div>
+	<div>github.com</div>
+	<p> git</p>
+
+</body>
+</html>
