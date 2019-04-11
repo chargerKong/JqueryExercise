@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		//1读写使用同一个方法
+		$(function(){
+			$("#btn1").click(function(){
+				console.log($("#mydiv").html())
+			})
+
+			$("#btn2").click(function(){
+				$("#mydiv").html("我改")
+			})
+		})
+
+		//链式操作元素
+
+		$(function(){
+			$("#btn3").click(function(){
+				$("#mydiv").html("hello").css("color","red");	
+				//$("#mydiv").html("hello")返回当前对象，所以可以连起来
+				$("#mydiv").css({
+					"width":"200px",
+					"border":"solid 2px yellow"})
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="button" value="读" id="btn1">
+	<input type="button" value="写" id="btn2">
+	<input type="button" value="改" id="btn3">
+	<hr/>
+	<div id="mydiv">hello</div>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		//把DOM对象转换为jQuery对象
+		// window.onload=function(){
+		// 	var mydivDom=document.getElementById("mydiv")
+		// 	var mydivjQ=$(mydivDom);//转换
+		// 	console.log(mydivDom.innerHTML)
+		// 	console.log($(mydivjQ).text())
+		// }
+
+
+		//把jQuery转换为DOM对象
+		$(function(){
+			var objJQ=$("#mydiv");//jQuery对象都是数组，哪怕是一个
+			var objDOM=objJQ[0];
+
+			var objDOM2=objJQ.get(0);//或者直接使用它的get方法转换
+			console.log(objDOM.innerHTML)//使用DOM属性获取HTML
+		})
+	</script>
+</head>
+<body>
+	<div id="mydiv">mydiv</div>
+</body>
+</html>

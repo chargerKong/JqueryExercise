@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	// $代表jQuery的别名，当有多个库都使用$符号时，为了避免发生冲突可以起别名
+	var jq=jQuery.noConflict();//重新设置jQuery的名字。
+
+	jq(function(){
+		alert("走你")
+	});
+
+	jQuery(function(){
+		alert("再走")
+	});
+</script>
+<body>
+	
+</body>
+</html>

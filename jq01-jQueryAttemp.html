@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+	//原生JS
+	// window.onload=function(){
+	// 	var mydiv=document.getElementById("mydiv");
+	// 	mydiv.style.color="red";
+	// }
+
+	//利用jQuery
+	// $(document).ready(function(){
+	// 	$("#mydiv").css("color","red")
+	// })
+
+
+	// 区别
+	/*
+		1.个数 window.onload 只能有一个，$(document).ready()可以有多个
+		2.执行时间。window.onload等所有内容加载完毕才执行
+				   $(document).ready()是等DOM文档结构加载完毕就执行，可能图片还没有加载完毕
+	*/
+
+	window.onload=function(){
+		console.log("first")
+	}
+
+
+	window.onload=function(){
+		console.log("second")
+	}
+	//只会出现第二个
+
+
+	$(function(){
+		console.log("jq1")
+	})
+
+	$(function(){
+		console.log("jq2")
+	})
+</script>
+<body>
+	<div id="mydiv">div </div>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#btn1').click(function(){
+				$('#mydiv1').css('background','red')
+			})
+
+			$('#btn2').click(function(){
+				$('div').css('background','red')
+			})
+
+			$('#btn3').click(function(){
+				$('.clas1').css('background','red')
+			})
+
+			$('#btn4').click(function(){
+				$('*').css('background','red')
+			})
+
+			$('#btn5').click(function(){
+				$('#mydiv1,.clas1').css('background','red')
+			})
+
+			$('#btn6').click(function(){
+				$('div.clas1').css('background','red')
+			})
+		})
+	</script>
+
+	
+</head>
+<body>
+	<input type="button" value="id选择器" id="btn1">
+	<input type="button" value="标签选择器" id="btn2">
+	<input type="button" value="类选择器" id="btn3">
+	<input type="button" value="通用选择器" id="btn4">
+	<input type="button" value="并集选择器" id="btn5">
+	<input type="button" value="交集选择器" id="btn6">
+	
+	
+	<div id="mydiv1">1</div>
+	<div class="clas1">2</div>
+	<div>3</div>
+	<div class="clas1">4</div>
+
+	<p class="clas1">5</p>
+</body>
+</html>

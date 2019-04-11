@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#btn1').click(function(){
+				$("span:first").css("background","red")
+			})
+
+			$('#btn2').click(function(){
+				$("span:last").css("background","red")
+			})
+
+			$('#btn3').click(function(){
+				$("div.clas1").css("background","red")
+			})
+
+			$('#btn4').click(function(){
+				$("div:not(div.clas1)").css("background","red")
+				//这里注意需要先选择div再筛选
+			})
+
+			$('#btn5').click(function(){
+				$("span:odd").css("background","red")
+			})
+
+			$('#btn6').click(function(){
+				$("tr:even").css("background","red")
+				$("tr:odd").css("background","none")
+			})
+
+			$('#btn7').click(function(){
+				$("tr:even").css("background","none")
+				$("tr:odd").css("background","red")
+			})
+
+			$('#btn8').click(function(){
+				$("span:eq(1)").css("background","red")
+			})
+
+			$('#btn9').click(function(){
+				$("span:gt(1)").css("background","red")
+				//great than 和less than
+			})
+
+			$('#btn10').click(function(){
+				$(":header:first").css("background","red")
+				//great than 和less than
+			})
+		})
+	</script>
+</head>
+<body>
+	<button id="btn1">选择第一个span元素</button>
+	<button id="btn2">选择最后一个span元素</button>
+	<button id="btn3">选择class为clas1的元素</button>
+	<button id="btn4">选择class不为clas1的元素</button>
+	<button id="btn5">选择索引为偶数的span</button>
+	<button id="btn6">奇数行变色</button>
+	<button id="btn7">偶数行变色</button>
+	<button id="btn8">选择索引等于1的span</button>
+	<button id="btn9">选择索引大于1的span</button>
+	<button id="btn10">选取所有标题的第一个元素</button>
+
+	<hr/>
+
+	<h1>一级标题</h1>
+	<h2>二级标题</h2>
+	<div class="clas1">
+		<p>
+			<span>span1</span>
+			<span>span2</span>
+		</p>
+	</div>
+	<div id="id1">
+		<p>
+			<span>span3</span>
+			<span>span4</span>
+		</p>
+	</div>
+	<div class="clas1">div2</div>
+	<div>div3</div>
+	
+	<p1>a</p1><br>
+	<p2>b</p2><br>
+	<p3>c</p3><br>
+	<p4>4</p4><br>
+	<p5>5</p5><br>
+	<table style="border: 2px">
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>2</td>
+			<td>3</td>
+			<td>4</td>
+			<td>5</td>
+		</tr>
+	</table>
+</body>
+</html>
