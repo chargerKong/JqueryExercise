@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("input:first").click(function(){
+				$("div:visible").css('background','red')
+			})
+			$("input:eq(1)").click(function(){
+				console.log($("div:hidden").length)
+				$("div:hidden").css({
+				"display":"block",
+				"background":"red",
+			})
+			})
+
+			$("input:eq(2)").click(function(){
+				console.log($("body :hidden").length)
+				//指的是body里面的hidden
+				//没有空格表示所有被隐藏的body
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="button" value="选择所有可见的div元素">
+	<input type="button" value="选择所有不可见的div元素">
+	<input type="button" value="选择所有不可见的元素">
+	<hr>
+
+	<div id="one">id为one的可见div</div>
+	<div>可见div2</div>
+	<div style="display: none;height: 200px"></div>
+	<input type="hidden">
+
+	<span>11</span>
+	<!-- <div id="one"></div>
+	<div id="one"></div> -->
+
+
+</body>
+</html>
