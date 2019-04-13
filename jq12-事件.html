@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<style type="text/css">
+		.over{
+			background: red;
+			border: 1px red solid;
+		}
+
+
+	</style>
+	<script type="text/javascript">
+		//鼠标事件常用的三种
+		$(function(){
+			$("li").click(function(){
+				console.log($(this).html());
+			}).mouseover(function(){
+				$(this).addClass("over");
+			}).mouseout(function(){
+				$(this).removeClass("over");
+			})
+		})
+
+		//键盘事件
+		$(function(){
+			$("#username").keydown(function(){
+				console.log("keydown")
+			}).keypress(function(){
+				console.log("keypress")
+			}).keyup(function(){
+				console.log("keyup")
+			})
+		})
+		//可以随时判定按了什么键
+		$(document).keydown(function(event){
+			
+			console.log(event.keyCode);
+		
+		})
+
+		//表单的focus和blur事件
+		
+		$(function(){
+			$("#username").focus(function(){
+				$(this).addClass("over");
+			}).blur(function(){
+				$(this).removeClass("over");
+			})
+		})
+		
+		
+
+	</script>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+	</ul>
+	<input type="text" id="username">
+</body>
+</html>
