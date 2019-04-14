@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		//直接使用事件名字
+		$(function(){
+			$("#mybtn").click(function(){
+				console.log("第一种方法")
+			})
+		})
+		//使用bind()或者on()绑定
+		$(function(){
+			$("#mybtn").on("click",function(){
+				console.log("第二种方法")
+			})
+		})
+
+		//使用多种方法
+		// $(function(){
+		// 	$("#mybtn").on({
+		// 		"mouseover":function(){
+		// 			console.log("鼠标经过");
+		// 		},
+		// 		"mouseout":function(){
+		// 			console.log("鼠标移开");
+		// 		}
+		// 	})
+		// })
+
+		//用hover代替鼠标移入移出
+		$(function(){
+			$('#mybtn').hover(function(){
+				console.log("鼠标移入")
+			},function(){
+				console.log('鼠标移出')
+			})
+		})
+
+		//事件移除
+		$(function(){
+			$("#mybtn1").on("click",function(){
+				//$("#mybtn").unbind();//移除所有事件
+				$("#mybtn").unbind("click");
+			});
+		})
+
+		//为表单添加提交事件
+		$(function(){
+			$("input:eq(3)").click(function(){
+				alert("aa")
+				$("form").submit(function(){
+					//submit里面可以增加匿名函数，返回false则不提交
+					if ($("input:eq(3)").val()==""){
+						return false;
+					}
+				})
+			})
+		})
+
+
+
+	</script>
+</head>
+<body>
+	<input type="button" value="绑定事件的多种方式" id="mybtn">
+	<input type="button" value="接触绑定所有事件" id="mybtn1">
+	<form action="123">
+		<input type="text">
+		<input type="button" name="" value="提交">
+	</form>
+</body>
+</html>
