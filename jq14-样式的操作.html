@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>样式</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<style type="text/css">
+		.hello{
+			border: 2px solid green;
+		}
+		.nihao{
+			text-decoration: underline;
+		}
+	</style>
+	<script>
+		//css里面一个参数取参数
+		$(function(){
+			$("#btn1").click(function(){
+				console.log($("p").css('background-color'))
+			})
+		})
+
+		//现在设置多个样式
+		$(function(){
+			$("#btn2").click(function(){
+				($("p").css({
+					'background':'green',
+					'font-size':'20px',
+				}))
+			})
+		})
+
+
+		//增加多个class
+		$(function(){
+			$("#btn3").click(function(){
+				($("p").addClass("hello nihao"))
+			})
+		})
+	</script>
+</head>
+<body>
+	<input type="button" value="取得样式" id="btn1">
+	<input type="button" value="设置样式" id="btn2">
+	<input type="button" value="添加多个样式" id="btn3">
+	<hr>
+	<p style="background-color: red">段落展示</p>
+</body>
+</html>
