@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+	$(function(){
+		$("#btn").on("click",addHobby);
+		$("#btn1").on("click",remove);
+		$("#btn3").on("click",clonn);
+		$("#btn4").on("click",repnale);
+		$("li:first").on("click",function(){
+			console.log("你点到了啊")
+		})
+
+
+	})
+
+
+	function repnale(){
+		var li4=$("<li>把妹</li>");
+		$("li:first").replaceWith(li4);
+	}
+	function clonn(){
+		var li3=$("li:first").clone();//当clone参数为true的时候吧事件也一起克隆过来；
+		li3.appendTo($("ul"))
+	}
+
+	function addHobby(){
+		var li1=$("<li>看电视</li>");
+		var li2=$("<li>看电影</li>");
+		//把li放入ul的最后面
+		//$("ul").append(li1)
+		li1.appendTo($("ul"));
+
+		$("ul").prepend(li1);
+		//li1.prependTo($("ul"))
+
+		var p = $("<p>这是一个段落</p>");
+		$("ul").before(p)
+
+	}
+
+	function remove(){
+		$("li:contains('睡觉')").remove();
+		$("li:contains('吃饭')").empty();
+	}
+</script>
+<body>
+	<input type="button" value="添加" id="btn">
+	<input type="button" value="移除" id="btn1">
+	<input type="button" value="克隆" id="btn3">
+	<input type="button" value="替换" id="btn4">
+	<hr>
+	<ul>
+		<li>吃饭</li>
+		<li>睡觉</li>
+		<li>打豆豆</li>
+	</ul>
+</body>
+</html>
