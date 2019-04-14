@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script type="text/javascript" src="jquery.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$("#btn1").click(function(){
+				$("ul").children().css("background","red")
+			})
+
+			$("#btn2").click(function(){
+				$("ul").parent().css("background","red")
+			})
+
+			$("#btn3").click(function(){
+				$("ul").prevAll().css("background","red")
+				//next() ,prev() ,nextAll()
+				$("ul").prevAll().each(function(index,item){
+					console.log(item);
+				})
+			})
+
+			$("#btn4").click(function(){
+				$("ul").siblings().css("background","red")
+			})
+		})
+	</script>	
+</head>
+<body>
+	<button id="btn1" >遍历子元素</button>
+	<button id="btn2">遍历父元素</button>
+	<button id="btn3">遍历前面所有</button>
+	<button id="btn4">遍历所有同辈的</button>
+
+	<hr>
+	<p>1</p>
+	<p>1</p>
+	<div>div</div>
+	<ul>
+		<li>li1</li>
+		<li>li2</li>
+		<li>li3</li>
+	</ul>
+
+	<p>p4</p>
+</body>
+</html>
