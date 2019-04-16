@@ -36,23 +36,30 @@
 				})
 			})
 
-			$("#btn6").click(function(){
-				$("div").slideDown(1000,function(){
-					console.log("显示OK")
+			$("#btn7").click(function(){
+				$('div').animate({
+					"margin-left":"100px"
+				},3000,function(){
+					$(this).animate({
+						"margin-top":"100px"
+					},1000)
 				})
 			})
 		})
 	</script>
 </head>
 <body>
-	<button id="btn1">隐藏</button>
+	<pre><button id="btn1">隐藏</button></pre>
 	<button id="btn2">显示</button>
 	<button id="btn3">淡出</button>
 	<button id="btn4">淡入</button>
 	<button id="btn5">上滑</button>
 	<button id="btn6">下滑</button>
-	<button id="btn6">自定义</button>
+	<button id="btn7">自定义</button>
 	<hr>
 	<div style="width: 100px;height: 100px; background-color: red"></div>
+	
+
+
 </body>
 </html>
